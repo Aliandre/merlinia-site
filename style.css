@@ -62,7 +62,7 @@ nav a:hover { color: var(--primary); }
   width: clamp(9rem, 28vw, 18rem); aspect-ratio: 1; border-radius: 50%;
   background: var(--accent); opacity: .9; z-index: -1;
 }
-@media (max-width: 40rem) { .hero::before { width: 7rem; right: -2.5rem; top: -1.5rem; opacity: .85; } }
+@media (max-width: 43.99rem) { .hero::before { width: 3.5rem; right: 1.25rem; top: 1.25rem; } }
 .eyebrow { font: 500 .8125rem var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--copper); margin: 0 0 1.25rem; }
 h1 { font: 600 clamp(2.25rem, 6.2vw, 4rem)/1.08 var(--serif); color: var(--primary); margin: 0 0 1.5rem; max-width: 18ch; letter-spacing: -.01em; text-wrap: balance; }
 /* L'avantage : une seule ligne, en gras (retour à la ligne seulement sous 44 rem, faute de place) */
@@ -161,12 +161,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 /* Mini-carte du héros */
 .hero .wrap { position: relative; }
-.hero-map { display: block; width: 11rem; margin-top: 1.75rem; text-decoration: none; color: var(--pen); }
+.hero-map { display: none; width: 11rem; text-decoration: none; color: var(--pen); }
 .hero-map .mini { width: 100%; height: auto; display: block; overflow: visible; }
 .hero-map .hand { display: block; font: 400 1.25rem/1.1 var(--hand); margin-top: .3rem; transform: rotate(-2deg); transform-origin: left; }
 @media (min-width: 44rem) {
   .hero .eyebrow { max-width: calc(97% - clamp(9rem, 18vw, 12rem) - 1.5rem); }
-  .hero-map { position: absolute; right: 3%; top: -1.75rem; width: clamp(9rem, 18vw, 12rem); margin: 0; }
+  .hero-map { display: block; position: absolute; right: 3%; top: -1.75rem; width: clamp(9rem, 18vw, 12rem); margin: 0; }
 }
 
 /* Le soleil d'ajonc du héros ne reste que là où il ne passe pas derrière la mini-carte (écrans larges) */
@@ -176,3 +176,21 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .wordmark { font: 600 1.15rem var(--serif); letter-spacing: -.01em; }
 .wordmark b { color: var(--copper); font-weight: 600; }
 footer .credit { flex-basis: 100%; font: 400 .75rem var(--mono); letter-spacing: .02em; }
+
+/* Mobile : version allégée, l'eyebrow laisse la place au soleil, la grande carte monte dans le héros */
+.m-only { display: none; }
+@media (max-width: 43.99rem) {
+  .m-hide { display: none !important; }
+  .m-only { display: block; }
+  .hero .eyebrow { max-width: calc(100% - 4.75rem); }
+  .hero .zone-fig { margin-top: 2rem; }
+  /* formules : seule la carte désignée par le curseur est dépliée */
+  .js .pack:not(.active) .summary, .js .pack:not(.active) dl { display: none; }
+  .js .pack:not(.active) { padding-block: 1rem; }
+  .js .pack:not(.active) h3 { margin-bottom: 0; }
+  .map .city text { font-size: 40px; }
+  .map .city text[text-anchor="middle"] { transform: translateY(14px); }
+  .map .home-label { font-size: 44px; }
+  .map .zone-label { font-size: 60px; }
+  .map .forest-label { font-size: 56px; }
+}

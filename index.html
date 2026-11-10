@@ -61,18 +61,21 @@
         <li class="step">
           <span class="n">01 — DIAGNOSTIC</span>
           <h3>Une journée dans vos locaux</h3>
-          <p>J'observe les postes un par un, les tâches répétitives, les documents qui circulent. Vous recevez un rapport avec une page par poste : ce qui se fait aujourd'hui, ce que l'IA ferait, le temps gagné, le coût.</p>
+          <p class="m-hide">J'observe les postes un par un, les tâches répétitives, les documents qui circulent. Vous recevez un rapport avec une page par poste : ce qui se fait aujourd'hui, ce que l'IA ferait, le temps gagné, le coût.</p>
+          <p class="m-only">Je regarde chaque poste, puis je vous rends un rapport clair, une page par poste.</p>
         </li>
         <li class="step">
           <span class="n">02 — LE SOCLE</span>
           <h3>Des bases solides sous l'IA</h3>
-          <p>Une IA posée sur une informatique fragile met l'entreprise en risque. Quand il manque, je pose aussi le socle : sauvegardes testées, postes à jour, un endroit commun pour les documents, et leur circulation jusqu'à l'IA. En lien avec votre prestataire informatique, pas à sa place.</p>
+          <p class="m-hide">Une IA posée sur une informatique fragile met l'entreprise en risque. Quand il manque, je pose aussi le socle : sauvegardes testées, postes à jour, un endroit commun pour les documents, et leur circulation jusqu'à l'IA. En lien avec votre prestataire informatique, pas à sa place.</p>
+          <p class="m-only">Sauvegardes, rangement, circulation des documents : les bases avant l'IA.</p>
           <p class="hand">le socle d'abord, l'IA au sommet</p>
         </li>
         <li class="step">
           <span class="n">03 — MISE EN PLACE</span>
           <h3>Au forfait, poste par poste</h3>
-          <p>Vous choisissez ce que vous mettez en place. Je configure, je teste avec vos vrais documents, je forme vos équipes, et je reste votre interlocuteur ensuite.</p>
+          <p class="m-hide">Vous choisissez ce que vous mettez en place. Je configure, je teste avec vos vrais documents, je forme vos équipes, et je reste votre interlocuteur ensuite.</p>
+          <p class="m-only">Je configure, je teste avec vos vrais documents, je forme vos équipes.</p>
         </li>
       </ol>
     </div>
@@ -102,10 +105,10 @@
           <dl>
             <dt>Vos données</dt><dd>Ne quittent pas l'entreprise</dd>
             <dt>Matériel</dt><dd>Un serveur d'IA : coûts d'acquisition importants (5 000 €+)</dd>
-            <dt>Au quotidien</dt><dd>L'IA traite vos documents, sans copier-coller</dd>
+            <dt class="m-hide">Au quotidien</dt><dd class="m-hide">L'IA traite vos documents, sans copier-coller</dd>
             <dt>Chaque mois</dt><dd>Maintenance du serveur et des modèles</dd>
-            <dt>Avec moi</dt><dd>Installation, réglages, mises à jour, dépannage</dd>
-            <dt>Pour qui</dt><dd>Si vos clients interdisent toute sortie de données</dd>
+            <dt class="m-hide">Avec moi</dt><dd class="m-hide">Installation, réglages, mises à jour, dépannage</dd>
+            <dt class="m-hide">Pour qui</dt><dd class="m-hide">Si vos clients interdisent toute sortie de données</dd>
           </dl>
         </article>
         <article class="pack rec" data-i="1">
@@ -116,10 +119,10 @@
           <dl>
             <dt>Vos données</dt><dd>Restent en Bretagne, sous contrat</dd>
             <dt>Matériel</dt><dd>Rien d'obligatoire : un navigateur suffit</dd>
-            <dt>Au quotidien</dt><dd>L'IA traite vos documents, sans copier-coller</dd>
+            <dt class="m-hide">Au quotidien</dt><dd class="m-hide">L'IA traite vos documents, sans copier-coller</dd>
             <dt>Chaque mois</dt><dd>À l'usage, sans engagement</dd>
-            <dt>Avec moi</dt><dd>Mise en place, suivi, un interlocuteur qui vous connaît</dd>
-            <dt>Pour qui</dt><dd>La plupart des PME : maîtrise et prix équilibrés</dd>
+            <dt class="m-hide">Avec moi</dt><dd class="m-hide">Mise en place, suivi, un interlocuteur qui vous connaît</dd>
+            <dt class="m-hide">Pour qui</dt><dd class="m-hide">La plupart des PME : maîtrise et prix équilibrés</dd>
           </dl>
         </article>
         <article class="pack" data-i="2">
@@ -129,15 +132,15 @@
           <dl>
             <dt>Vos données</dt><dd>Partent hors de Bretagne, souvent aux États-Unis</dd>
             <dt>Matériel</dt><dd>Rien</dd>
-            <dt>Au quotidien</dt><dd>Chacun copie-colle ses textes, quand il y pense</dd>
+            <dt class="m-hide">Au quotidien</dt><dd class="m-hide">Chacun copie-colle ses textes, quand il y pense</dd>
             <dt>Chaque mois</dt><dd>20 à 25 € par utilisateur, payés à l'éditeur</dd>
-            <dt>Avec moi</dt><dd>Règles d'usage et formation des équipes</dd>
-            <dt>Pour qui</dt><dd>Un premier pas, sur des données non sensibles</dd>
+            <dt class="m-hide">Avec moi</dt><dd class="m-hide">Règles d'usage et formation des équipes</dd>
+            <dt class="m-hide">Pour qui</dt><dd class="m-hide">Un premier pas, sur des données non sensibles</dd>
           </dl>
         </article>
       </div>
 
-      <p class="combine"><strong>Les formules se combinent, poste par poste</strong> : le plus sensible chez vous, le quotidien en Bretagne, les courriers dans le chat. Dans tous les cas, je commence par le diagnostic : le rapport dit quelle formule convient à chaque poste.</p>
+      <p class="combine"><strong>Les formules se combinent, poste par poste</strong> : le plus sensible chez vous, le quotidien en Bretagne, les courriers dans le chat. <span class="m-hide">Dans tous les cas, je commence par le diagnostic : le rapport dit quelle formule convient à chaque poste.</span></p>
     </div>
   </section>
 
@@ -158,6 +161,25 @@
       packs.forEach(function (p) { p.addEventListener('click', function () { show(+p.getAttribute('data-i')); }); });
       show(1);
     })();
+    // Mobile : la grande carte remplace la mini-carte du héros (elle revient en bas sur grand écran).
+    // (le script est placé avant la section de la carte : on attend la fin du chargement)
+    function moveMap() {
+      var fig = document.querySelector('.zone-fig'), hero = document.querySelector('.hero .wrap');
+      if (!fig || !hero || !window.matchMedia) return;
+      var slot = document.createComment('zone-fig');
+      fig.parentNode.insertBefore(slot, fig);
+      var mq = window.matchMedia('(max-width: 43.99rem)');
+      function place() {
+        var inHero = fig.parentNode === hero;
+        if (mq.matches && !inHero) hero.appendChild(fig);
+        else if (!mq.matches && inHero) slot.parentNode.insertBefore(fig, slot.nextSibling);
+      }
+      place();
+      if (mq.addEventListener) mq.addEventListener('change', place); else mq.addListener(place);
+      window.addEventListener('resize', place);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', moveMap);
+    else moveMap();
   </script>
 
   <section class="alt">
@@ -165,10 +187,10 @@
       <p class="kicker">Ce que je vous garantis</p>
       <h2>Simple, local, transparent.</h2>
       <ul class="principles" style="margin-top:2rem">
-        <li><strong>Joignable</strong><span>Un interlocuteur à moins d'1h de chez vous, qui vient sur place.</span></li>
-        <li><strong>Données en Bretagne</strong><span>Vos documents sont traités sur une plateforme hébergée en Bretagne, pas chez un géant américain.</span></li>
-        <li><strong>Prix clair</strong><span>Annoncé avant, poste par poste. Vous décidez à chaque étape.</span></li>
-        <li><strong>Humain d'abord</strong><span>Je regarde comment vous travaillez avant de proposer quoi que ce soit.</span></li>
+        <li><strong>Joignable</strong><span class="m-hide">Un interlocuteur à moins d'1h de chez vous, qui vient sur place.</span></li>
+        <li><strong>Données en Bretagne</strong><span class="m-hide">Vos documents sont traités sur une plateforme hébergée en Bretagne, pas chez un géant américain.</span></li>
+        <li><strong>Prix clair</strong><span class="m-hide">Annoncé avant, poste par poste. Vous décidez à chaque étape.</span></li>
+        <li><strong>Humain d'abord</strong><span class="m-hide">Je regarde comment vous travaillez avant de proposer quoi que ce soit.</span></li>
       </ul>
     </div>
   </section>
@@ -179,7 +201,7 @@
         <p class="kicker">Votre interlocuteur</p>
         <h2>Alexandre Trachez</h2>
         <p>J'habite à côté de Saint-Méen-le-Grand. Je viens de l'informatique : les outils des développeurs, l'automatisation, ce qui fait gagner du temps sans faire de bruit.</p>
-        <p>Aujourd'hui, je mets l'IA au service des entreprises du coin, sur place, avec un principe simple : regarder comment vous travaillez avant de proposer quoi que ce soit.</p>
+        <p class="m-hide">Aujourd'hui, je mets l'IA au service des entreprises du coin, sur place, avec un principe simple : regarder comment vous travaillez avant de proposer quoi que ce soit.</p>
       </div>
       <figure class="zone-fig">
         <!-- Cercle indicatif = environ 60 km à vol d'oiseau, soit ~1 h de route. -->
