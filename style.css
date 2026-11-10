@@ -148,8 +148,6 @@ h2 { font: 600 clamp(1.6rem, 3.6vw, 2.25rem)/1.15 var(--serif); color: var(--pri
 .map .zone-label { font: 400 52px var(--hand); fill: var(--copper); }
 .map .forest use { fill: var(--pen); stroke: var(--paper); stroke-width: 3; stroke-linejoin: round; }
 .map .forest-label { font: 400 50px var(--hand); fill: var(--pen); text-anchor: middle; }
-.zone-fig figcaption { margin-top: .75rem; font: 500 .8125rem var(--mono); letter-spacing: .04em; color: var(--muted); text-align: center; }
-.zone-fig .hand { font: 400 1.1rem var(--hand); letter-spacing: 0; color: var(--pen); }
 .about p { margin: 0 0 1rem; }
 
 .contact { text-align: center; }
@@ -177,5 +175,4 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 /* Nom de marque : « IA » mis en avant */
 .wordmark { font: 600 1.15rem var(--serif); letter-spacing: -.01em; }
 .wordmark b { color: var(--copper); font-weight: 600; }
-
-.zone-fig .credit { display: block; margin-top: .35rem; font: 400 .75rem var(--mono); letter-spacing: .02em; color: var(--muted); }
+footer .credit { flex-basis: 100%; font: 400 .75rem var(--mono); letter-spacing: .02em; }
