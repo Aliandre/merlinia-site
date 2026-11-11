@@ -5,6 +5,7 @@
 @font-face { font-family: "Plex Sans"; src: url("fonts/IBMPlexSans-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Plex Sans"; src: url("fonts/IBMPlexSans-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
 @font-face { font-family: "Plex Mono"; src: url("fonts/IBMPlexMono-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url("fonts/IBMPlexMono-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
 @font-face { font-family: "Caveat"; src: url("fonts/Caveat-wght.ttf") format("truetype"); font-weight: 400 700; font-display: swap; }
 
 :root {
@@ -63,16 +64,17 @@ nav a:hover { color: var(--primary); }
   background: var(--accent); opacity: .9; z-index: -1;
 }
 @media (max-width: 43.99rem) { .hero::before { width: 3.5rem; right: 1.25rem; top: 1.25rem; } }
-.eyebrow { font: 500 .8125rem var(--mono); text-transform: uppercase; letter-spacing: .12em; color: var(--copper); margin: 0 0 1.25rem; }
+/* Ce que je fais et où, sur deux lignes : plus gros et plus gras qu'un simple surtitre */
+.eyebrow { font: 600 clamp(.95rem, 1.9vw, 1.125rem)/1.5 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--copper); margin: 0 0 1.25rem; text-wrap: balance; }
 h1 { font: 600 clamp(2.25rem, 6.2vw, 4rem)/1.08 var(--serif); color: var(--primary); margin: 0 0 1.5rem; max-width: 18ch; letter-spacing: -.01em; text-wrap: balance; }
 /* L'avantage : une seule ligne, en gras (retour à la ligne seulement sous 44 rem, faute de place) */
-.punch { font: 600 min(1.7rem, calc((100vw - 2rem) / 38)) / 1.35 var(--sans); color: var(--primary); margin: 0 0 1.25rem; width: fit-content;
-  background: linear-gradient(transparent 62%, rgba(233, 177, 12, .5) 62%); }
+.punch { font: 600 min(1.7rem, calc((100vw - 2rem) / 38)) / 1.35 var(--sans); color: var(--primary); margin: 0 0 1.25rem; }
+/* Surlignage jaune, comme au feutre : reste sous le texte même quand il passe à la ligne */
+.hl { background: linear-gradient(transparent 62%, rgba(233, 177, 12, .5) 62%); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 @media (min-width: 44rem) { .punch { white-space: nowrap; } }
 @media (max-width: 43.99rem) { .punch { font-size: 1.35rem; } }
 strong { font-weight: 600; }
 .lede { font-size: clamp(1.125rem, 2.2vw, 1.3rem); max-width: 40rem; margin: 0 0 2rem; }
-.note { font: 400 1.5rem/1 var(--hand); color: var(--pen); transform: rotate(-2deg); display: inline-block; margin-left: .5rem; }
 
 .btn {
   display: inline-flex; align-items: center; gap: .6rem;
@@ -95,7 +97,7 @@ h2 { font: 600 clamp(1.6rem, 3.6vw, 2.25rem)/1.15 var(--serif); color: var(--pri
 .step h3 { font: 600 1.25rem/1.25 var(--serif); color: var(--primary); margin: .35rem 0 .6rem; }
 .step p { margin: 0; color: var(--text); font-size: 1rem; }
 
-.step .hand { font: 400 1.5rem/1.1 var(--hand); color: var(--pen); margin-top: .9rem; transform: rotate(-1.5deg); transform-origin: left; }
+.step .hand { font: 400 1.5rem/1.1 var(--hand); color: var(--pen); margin-top: .9rem; transform: rotate(-1.5deg); text-align: center; text-wrap: balance; }
 
 /* Curseur des formules */
 .slider { margin: 0 0 1.25rem; }
@@ -151,7 +153,8 @@ h2 { font: 600 clamp(1.6rem, 3.6vw, 2.25rem)/1.15 var(--serif); color: var(--pri
 .about p { margin: 0 0 1rem; }
 
 .contact { text-align: center; }
-.contact h2 { margin-bottom: 1rem; }
+.contact h2 { margin-bottom: 1rem; text-wrap: balance; }
+.contact h2 .hl { white-space: nowrap; }  /* « dans vos locaux » reste d'un seul tenant sur mobile */
 .contact p { max-width: 34rem; margin: 0 auto 2rem; }
 
 footer { border-top: 1px solid var(--line); padding: 1.75rem 0 2.5rem; font-size: .875rem; color: var(--muted); }
@@ -163,7 +166,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 .hero .wrap { position: relative; }
 .hero-map { display: none; width: 11rem; text-decoration: none; color: var(--pen); }
 .hero-map .mini { width: 100%; height: auto; display: block; overflow: visible; }
-.hero-map .hand { display: block; font: 400 1.25rem/1.1 var(--hand); margin-top: .3rem; transform: rotate(-2deg); transform-origin: left; }
+/* Légende sur une seule ligne, centrée sous la carte (plus large qu'elle) ; plus petite sur les écrans étroits pour rester dans la page */
+.hero-map .hand { display: block; width: max-content; white-space: nowrap; margin: .3rem 0 0 50%; font: 400 clamp(.9rem, 1.8vw, 1.25rem)/1.1 var(--hand); transform: translateX(-50%) rotate(-2deg); }
 @media (min-width: 44rem) {
   .hero .eyebrow { max-width: calc(97% - clamp(9rem, 18vw, 12rem) - 1.5rem); }
   .hero-map { display: block; position: absolute; right: 3%; top: -1.75rem; width: clamp(9rem, 18vw, 12rem); margin: 0; }
